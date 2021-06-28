@@ -43,7 +43,7 @@ class Application(GraphSerializable, TableSerializable):
         self.task = task_id
 
         # todo: need to modify this hack
-        self.application_url = application_url_template.format(dag_id=dag_id)
+        self.application_url = application_url_template.format(dag_id=dag_id, task_id=task_id, exec_date=exec_date)
         self.database, self.cluster, self.schema, self.table = db_name, cluster, schema, table_name
 
         self.dag = dag_id
